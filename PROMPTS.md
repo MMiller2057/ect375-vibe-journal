@@ -14,5 +14,4 @@
 - "attempt option 2 with my url https://github.com/MMiller2057/ect375-vibe-journal"
 - "vercel throws an error 404: NOT_FOUND... my github repository only contains prompts.md"
 - "Command 'npm run build' exited with 1 new error on vercel when redeploying"
-- "the settings at the top under this project only prompt to give feedback"
-- "can you push these logs to prompts.md?"
+- Succesfully redeployed on Vercel

@@ -48,38 +48,54 @@ export default function Home() {
             
           </div>
 
-          <aside className="hours-sidebar glass-panel" style={{ flex: '1 1 300px', padding: '2rem', height: 'fit-content' }}>
-             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-               <Clock color="var(--color-primary)" /> Opening Hours
-             </h3>
-             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                 <span>Mon - Wed</span>
-                 <span style={{ color: 'var(--color-text-muted)', fontWeight: '600' }}>Closed</span>
-               </li>
-               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                 <span>Thursday</span>
-                 <span style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>4PM - 8PM</span>
-               </li>
-               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                 <span>Friday</span>
-                 <span style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>4PM - 9PM</span>
-               </li>
-               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                 <span>Saturday</span>
-                 <span style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>2PM - 9PM</span>
-               </li>
-               <li style={{ display: 'flex', justifyContent: 'space-between' }}>
-                 <span>Sunday</span>
-                 <span style={{ color: 'var(--color-secondary)', fontWeight: '600' }}>3PM - 7PM</span>
-               </li>
-             </ul>
+          <aside className="hours-sidebar" style={{ 
+            flex: '1 1 300px', 
+            padding: '2rem', 
+            height: 'fit-content',
+            background: '#0a0a0c',
+            border: '2px solid #333',
+            borderRadius: '12px',
+            boxShadow: 'inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(0,255,255,0.1)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+             {/* Retro Scanline Overlay */}
+             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))', backgroundSize: '100% 4px, 3px 100%', pointerEvents: 'none' }}></div>
              
-             <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-               <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                 <MapPin color="var(--color-primary)" size={20} /> Location
+             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'uppercase', letterSpacing: '2px', color: '#00ffff', textShadow: '0 0 8px rgba(0,255,255,0.6)' }}>
+               <Clock color="#00ffff" /> SYSTEM TIMES
+             </h3>
+             
+             <div style={{ fontFamily: '"Courier New", Courier, monospace', fontSize: '1.1rem' }}>
+               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1.2rem', padding: 0 }}>
+                 <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
+                   <span style={{ color: '#aaa' }}>MON-WED</span>
+                   <span style={{ color: '#ff4b2b', fontWeight: 'bold', textShadow: '0 0 5px rgba(255, 75, 43, 0.6)' }}>OFFLINE</span>
+                 </li>
+                 <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
+                   <span style={{ color: '#fff' }}>THURSDAY</span>
+                   <span style={{ color: '#38ef7d', fontWeight: 'bold', textShadow: '0 0 5px rgba(56, 239, 125, 0.6)' }}>4PM-8PM</span>
+                 </li>
+                 <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
+                   <span style={{ color: '#fff' }}>FRIDAY</span>
+                   <span style={{ color: '#38ef7d', fontWeight: 'bold', textShadow: '0 0 5px rgba(56, 239, 125, 0.6)' }}>4PM-9PM</span>
+                 </li>
+                 <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
+                   <span style={{ color: '#fff' }}>SATURDAY</span>
+                   <span style={{ color: '#38ef7d', fontWeight: 'bold', textShadow: '0 0 5px rgba(56, 239, 125, 0.6)' }}>2PM-9PM</span>
+                 </li>
+                 <li style={{ display: 'flex', justifyContent: 'space-between', paddingBottom: '0.5rem' }}>
+                   <span style={{ color: '#fff' }}>SUNDAY</span>
+                   <span style={{ color: '#38ef7d', fontWeight: 'bold', textShadow: '0 0 5px rgba(56, 239, 125, 0.6)' }}>2PM-7PM</span>
+                 </li>
+               </ul>
+             </div>
+             
+             <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '2px solid #333', fontFamily: '"Courier New", Courier, monospace' }}>
+               <h3 style={{ fontSize: '1.1rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#ff416c', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                 <MapPin color="#ff416c" size={20} /> COORDINATES
                </h3>
-               <p style={{ color: 'var(--color-text-muted)' }}>Pinball on Perry<br/>Attica, IN</p>
+               <p style={{ color: '#fff', fontSize: '1.1rem' }}>PINBALL ON PERRY<br/><span style={{ color: '#aaa', fontSize: '1rem' }}>ATTICA, IN</span></p>
              </div>
           </aside>
           

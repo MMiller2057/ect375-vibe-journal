@@ -12,7 +12,7 @@ const MOCK_EVENTS = [
 ];
 
 export default function EventsPage() {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(MOCK_EVENTS);
   const [loading, setLoading] = useState(true);
 
   // Calendar logic (hardcoded to April 2026 for UI demo based on mock dates, or dynamic)
